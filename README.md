@@ -11,7 +11,7 @@ A dynamic trading-card platform where Pokémon cards track **real-time stock pri
 | ![Dashboard](Output/1.png) | ![Card&nbsp;Gallery](Output/2.png) | ![Card&nbsp;Details](Output/3.png) |
 | ![Trading](Output/4.png) | ![AI&nbsp;Insights](Output/5.png) | ![Admin&nbsp;Dashboard](Output/6.png) |
 
-> Screenshots live inside the `Output/` folder. Replace the placeholders above with your own images named `1.png` – `6.png`.
+
 
 ---
 
