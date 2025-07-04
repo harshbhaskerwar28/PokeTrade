@@ -1,7 +1,7 @@
 // API integration utilities with real data fetching
-const FINNHUB_API_KEY = "ct8sa39r01qpc9s04rrgct8sa39r01qpc9s04rs0"
-const GEMINI_API_KEY = "AIzaSyAGyNLs498YE7XGm37gxAW-FxETyhUNviU"
-const PERPLEXITY_API_KEY = "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"
+const FINNHUB_API_KEY = process.env.FINNHUB_API_KEY || ""
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || ""
+const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY || ""
 
 export interface StockData {
   symbol: string
