@@ -10,16 +10,6 @@
 
 ---
 
-### 🌟 **Live Platform Stats**
-- **$2.4M** Daily Trading Volume
-- **150+** Active Pokémon Cards
-- **24/7** Real-Time Market Data
-- **AI-Powered** Trading Insights
-
-</div>
-
----
-
 ## 📋 Table of Contents
 
 - [🎯 Overview](#-overview)
