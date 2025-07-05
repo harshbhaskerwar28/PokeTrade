@@ -1,18 +1,16 @@
 "use client";
 
+import { TradingChatbot } from "@/components/trading-chatbot"
 import { DashboardHeader } from "@/components/dashboard-header"
-import { PortfolioOverview } from "@/components/portfolio-overview"
-import { RecentTrades } from "@/components/recent-trades"
-import { WatchList } from "@/components/watch-list"
-import { MarketNews } from "@/components/market-news"
-import { WebsiteAssistant } from "@/components/website-assistant"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { useTheme } from "@/contexts/ThemeContext"
 
-export default function DashboardPage() {
+export default function ChatbotPage() {
+  const { t } = useLanguage();
   const { isDark } = useTheme();
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
+    <div className={`min-h-screen ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
       {/* Subtle dotted background pattern */}
       <div
         className="absolute inset-0 opacity-20"
@@ -25,19 +23,10 @@ export default function DashboardPage() {
       />
 
       <DashboardHeader />
-      <div className="container mx-auto px-4 py-8 space-y-8 relative z-10">
-        <PortfolioOverview />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-8">
-            <RecentTrades />
-            <MarketNews />
-          </div>
-          <div>
-            <WatchList />
-          </div>
-        </div>
+      
+      <div className="relative z-10">
+        <TradingChatbot />
       </div>
-              <WebsiteAssistant />
     </div>
   )
-}
+} 

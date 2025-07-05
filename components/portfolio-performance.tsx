@@ -3,8 +3,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, Target, AlertTriangle, Award } from "lucide-react"
+import { useTheme } from "@/contexts/ThemeContext"
 
 export function PortfolioPerformance() {
+  const { isDark } = useTheme()
+
   const performanceMetrics = [
     {
       title: "Total Return",
@@ -49,16 +52,26 @@ export function PortfolioPerformance() {
 
   return (
     <div className="space-y-6">
-      <Card className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl">
+      <Card className={`backdrop-blur-md border rounded-2xl shadow-2xl ${
+        isDark 
+          ? "bg-white/10 border-white/20"
+          : "bg-black/10 border-black/20"
+      }`}>
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-white">Performance Metrics</CardTitle>
+          <CardTitle className={`text-xl font-semibold ${
+            isDark ? "text-white" : "text-slate-900"
+          }`}>Performance Metrics</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {performanceMetrics.map((metric, index) => (
               <div
                 key={index}
-                className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                className={`p-3 rounded-xl backdrop-blur-sm border hover:bg-white/10 transition-all duration-300 ${
+                  isDark 
+                    ? "bg-white/5 border-white/10"
+                    : "bg-black/5 border-black/10"
+                }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
@@ -81,10 +94,14 @@ export function PortfolioPerformance() {
                         }`}
                       />
                     </div>
-                    <span className="text-sm text-slate-300">{metric.title}</span>
+                    <span className={`text-sm ${
+                      isDark ? "text-slate-300" : "text-slate-600"
+                    }`}>{metric.title}</span>
                   </div>
                 </div>
-                <div className="text-lg font-bold text-white">{metric.value}</div>
+                <div className={`text-lg font-bold ${
+                  isDark ? "text-white" : "text-slate-900"
+                }`}>{metric.value}</div>
                 <div className="flex items-center justify-between">
                   <span
                     className={`text-sm font-semibold ${
@@ -97,7 +114,9 @@ export function PortfolioPerformance() {
                   >
                     {metric.percent}
                   </span>
-                  <span className="text-xs text-slate-400">{metric.period}</span>
+                  <span className={`text-xs ${
+                    isDark ? "text-slate-400" : "text-slate-600"
+                  }`}>{metric.period}</span>
                 </div>
               </div>
             ))}
@@ -105,16 +124,26 @@ export function PortfolioPerformance() {
         </CardContent>
       </Card>
 
-      <Card className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl">
+      <Card className={`backdrop-blur-md border rounded-2xl shadow-2xl ${
+        isDark 
+          ? "bg-white/10 border-white/20"
+          : "bg-black/10 border-black/20"
+      }`}>
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-white">Recent Activity</CardTitle>
+          <CardTitle className={`text-xl font-semibold ${
+            isDark ? "text-white" : "text-slate-900"
+          }`}>Recent Activity</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             {recentActivity.map((activity, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+                className={`flex items-center justify-between p-3 rounded-xl backdrop-blur-sm border ${
+                  isDark 
+                    ? "bg-white/5 border-white/10"
+                    : "bg-black/5 border-black/10"
+                }`}
               >
                 <div className="flex items-center gap-3">
                   <Badge
@@ -129,11 +158,17 @@ export function PortfolioPerformance() {
                     {activity.action}
                   </Badge>
                   <div>
-                    <div className="text-sm font-medium text-white">{activity.card}</div>
-                    <div className="text-xs text-slate-400">{activity.time}</div>
+                    <div className={`text-sm font-medium ${
+                      isDark ? "text-white" : "text-slate-900"
+                    }`}>{activity.card}</div>
+                    <div className={`text-xs ${
+                      isDark ? "text-slate-400" : "text-slate-600"
+                    }`}>{activity.time}</div>
                   </div>
                 </div>
-                <div className="text-sm font-semibold text-white">{activity.amount}</div>
+                <div className={`text-sm font-semibold ${
+                  isDark ? "text-white" : "text-slate-900"
+                }`}>{activity.amount}</div>
               </div>
             ))}
           </div>

@@ -3,11 +3,11 @@ import { MarketOverview } from "@/components/market-overview"
 import { TrendingCards } from "@/components/trending-cards"
 import { MarketHeatmap } from "@/components/market-heatmap"
 import { AIInsights } from "@/components/ai-insights"
-import { ChatBot } from "@/components/chatbot"
+import { WebsiteAssistant } from "@/components/website-assistant"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
       {/* Subtle dotted background pattern */}
       <div
         className="absolute inset-0 opacity-20"
@@ -24,7 +24,7 @@ export default function HomePage() {
         <MarketHeatmap />
         <AIInsights />
       </div>
-      <ChatBot />
+      <WebsiteAssistant />
     </div>
   )
 }

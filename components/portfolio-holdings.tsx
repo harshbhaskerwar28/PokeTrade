@@ -5,8 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, TrendingDown, MoreHorizontal, Star } from "lucide-react"
+import { useTheme } from "@/contexts/ThemeContext"
 
 export function PortfolioHoldings() {
+  const { isDark } = useTheme()
+
   const [holdings] = useState([
     {
       id: 1,
@@ -82,10 +85,20 @@ export function PortfolioHoldings() {
   }
 
   return (
-    <Card className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl">
+    <Card className={`backdrop-blur-md border rounded-2xl shadow-2xl ${
+      isDark 
+        ? "bg-white/10 border-white/20"
+        : "bg-black/10 border-black/20"
+    }`}>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-xl font-semibold text-white">Portfolio Holdings</CardTitle>
-        <Button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 rounded-xl">
+        <CardTitle className={`text-xl font-semibold ${
+          isDark ? "text-white" : "text-slate-900"
+        }`}>Portfolio Holdings</CardTitle>
+        <Button className={`backdrop-blur-sm border rounded-xl ${
+          isDark 
+            ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
+            : "bg-black/10 border-black/20 text-slate-900 hover:bg-black/20"
+        }`}>
           Manage Holdings
         </Button>
       </CardHeader>
@@ -94,7 +107,11 @@ export function PortfolioHoldings() {
           {holdings.map((holding) => (
             <div
               key={holding.id}
-              className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+              className={`p-4 rounded-xl backdrop-blur-sm border hover:bg-white/10 transition-all duration-300 ${
+                isDark 
+                  ? "bg-white/5 border-white/10"
+                  : "bg-black/5 border-black/10"
+              }`}
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -115,22 +132,30 @@ export function PortfolioHoldings() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-bold text-white text-lg">{holding.name}</h3>
+                      <h3 className={`font-bold text-lg ${
+                        isDark ? "text-white" : "text-slate-900"
+                      }`}>{holding.name}</h3>
                       <Badge
                         className={`bg-gradient-to-r ${getTypeColor(holding.type)} backdrop-blur-sm border rounded-lg px-2 py-1 text-xs`}
                       >
                         {holding.type}
                       </Badge>
                     </div>
-                    <div className="text-sm text-slate-300">
+                    <div className={`text-sm ${
+                      isDark ? "text-slate-300" : "text-slate-600"
+                    }`}>
                       {holding.quantity} cards • Avg: ${holding.avgPrice.toFixed(2)}
                     </div>
                   </div>
                 </div>
 
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-white">${holding.totalValue.toLocaleString()}</div>
-                  <div className="text-lg text-slate-300">${holding.currentPrice.toFixed(2)}</div>
+                  <div className={`text-2xl font-bold ${
+                    isDark ? "text-white" : "text-slate-900"
+                  }`}>${holding.totalValue.toLocaleString()}</div>
+                  <div className={`text-lg ${
+                    isDark ? "text-slate-300" : "text-slate-600"
+                  }`}>${holding.currentPrice.toFixed(2)}</div>
                   <div
                     className={`flex items-center gap-1 text-sm font-semibold justify-end ${
                       holding.change >= 0 ? "text-green-400" : "text-red-400"
@@ -142,7 +167,11 @@ export function PortfolioHoldings() {
                   </div>
                 </div>
 
-                <Button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 rounded-xl h-8 w-8 p-0">
+                <Button className={`backdrop-blur-sm border rounded-xl h-8 w-8 p-0 ${
+                  isDark 
+                    ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
+                    : "bg-black/10 border-black/20 text-slate-900 hover:bg-black/20"
+                }`}>
                   <MoreHorizontal className="h-4 w-4" />
                 </Button>
               </div>

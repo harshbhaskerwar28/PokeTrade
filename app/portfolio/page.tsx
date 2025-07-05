@@ -2,11 +2,11 @@ import { DashboardHeader } from "@/components/dashboard-header"
 import { PortfolioOverview } from "@/components/portfolio-overview"
 import { PortfolioHoldings } from "@/components/portfolio-holdings"
 import { PortfolioPerformance } from "@/components/portfolio-performance"
-import { ChatBot } from "@/components/chatbot"
+import { WebsiteAssistant } from "@/components/website-assistant"
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
       {/* Subtle dotted background pattern */}
       <div
         className="absolute inset-0 opacity-20"
@@ -29,7 +29,7 @@ export default function PortfolioPage() {
           </div>
         </div>
       </div>
-      <ChatBot />
+              <WebsiteAssistant />
     </div>
   )
 }

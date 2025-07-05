@@ -4,8 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight, ArrowDownRight, Clock } from "lucide-react"
+import { useTheme } from "@/contexts/ThemeContext"
 
 export function RecentTrades() {
+  const { isDark } = useTheme()
+
   const trades = [
     {
       id: 1,
@@ -50,10 +53,20 @@ export function RecentTrades() {
   ]
 
   return (
-    <Card className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl">
+    <Card className={`backdrop-blur-md border rounded-2xl shadow-2xl ${
+      isDark 
+        ? "bg-white/10 border-white/20"
+        : "bg-black/10 border-black/20"
+    }`}>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-xl font-semibold text-white">Recent Trades</CardTitle>
-        <Button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 rounded-xl">
+        <CardTitle className={`text-xl font-semibold ${
+          isDark ? "text-white" : "text-slate-900"
+        }`}>Recent Trades</CardTitle>
+        <Button className={`backdrop-blur-sm border rounded-xl ${
+          isDark 
+            ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
+            : "bg-black/10 border-black/20 text-slate-900 hover:bg-black/20"
+        }`}>
           View All
         </Button>
       </CardHeader>
@@ -62,7 +75,11 @@ export function RecentTrades() {
           {trades.map((trade) => (
             <div
               key={trade.id}
-              className="flex items-center justify-between p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+              className={`flex items-center justify-between p-4 rounded-xl backdrop-blur-sm border hover:bg-white/10 transition-all duration-300 ${
+                isDark 
+                  ? "bg-white/5 border-white/10"
+                  : "bg-black/5 border-black/10"
+              }`}
             >
               <div className="flex items-center gap-4">
                 <div
@@ -75,16 +92,24 @@ export function RecentTrades() {
                   )}
                 </div>
                 <div>
-                  <div className="font-semibold text-white">{trade.card}</div>
-                  <div className="text-sm text-slate-300">
+                  <div className={`font-semibold ${
+                    isDark ? "text-white" : "text-slate-900"
+                  }`}>{trade.card}</div>
+                  <div className={`text-sm ${
+                    isDark ? "text-slate-300" : "text-slate-600"
+                  }`}>
                     {trade.type.toUpperCase()} {trade.quantity} cards @ ${trade.price}
                   </div>
                 </div>
               </div>
 
               <div className="text-right">
-                <div className="font-semibold text-white">${trade.total.toLocaleString()}</div>
-                <div className="flex items-center gap-2 text-sm text-slate-400">
+                <div className={`font-semibold ${
+                  isDark ? "text-white" : "text-slate-900"
+                }`}>${trade.total.toLocaleString()}</div>
+                <div className={`flex items-center gap-2 text-sm ${
+                  isDark ? "text-slate-400" : "text-slate-600"
+                }`}>
                   <Clock className="h-3 w-3" />
                   {trade.time}
                 </div>
