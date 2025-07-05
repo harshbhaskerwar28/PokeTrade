@@ -491,26 +491,6 @@ SOFTWARE.
 
 ---
 
-## 🔗 Links
-
-<div align="center">
-
-### **🌐 Live Platform**
-[![PokéTrade Live](https://img.shields.io/badge/🚀_Live_Platform-poketrade28.vercel.app-blue?style=for-the-badge&logo=vercel)](https://poketrade28.vercel.app/)
-
-### **🎥 Video Demo**
-[![Video Demo](https://img.shields.io/badge/🎥_Watch_Demo-Google_Drive-red?style=for-the-badge&logo=google-drive)](https://drive.google.com/file/d/1-35L4hrt-33Ljl2ObmGUgwkYgobIhl1Y/view?usp=sharing)
-
-### **📚 Documentation**
-[![Documentation](https://img.shields.io/badge/📚_Documentation-GitHub_Wiki-green?style=for-the-badge&logo=github)](https://github.com/your-username/poketrade/wiki)
-
-### **💬 Community**
-[![Discord](https://img.shields.io/badge/💬_Discord-Join_Community-purple?style=for-the-badge&logo=discord)](https://discord.gg/your-server)
-
-</div>
-
----
-
 <div align="center">
 *PokéTrade - Where Gaming Meets Trading* 🎮💹
 
