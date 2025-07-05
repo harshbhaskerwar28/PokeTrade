@@ -8,8 +8,6 @@
 [![Video Demo](https://img.shields.io/badge/🎥_Video_Demo-Watch_Now-red?style=for-the-badge)](https://drive.google.com/file/d/1-35L4hrt-33Ljl2ObmGUgwkYgobIhl1Y/view?usp=sharing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
----
-
 </div>
 
 ---
