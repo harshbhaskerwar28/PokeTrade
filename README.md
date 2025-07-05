@@ -10,6 +10,10 @@
 
 ---
 
+</div>
+
+---
+
 ## 📋 Table of Contents
 
 - [🎯 Overview](#-overview)
@@ -482,6 +486,6 @@ SOFTWARE.
 ---
 
 <div align="center">
-*PokéTrade - Where Gaming Meets Trading* 🎮💹
+PokéTrade - Where Gaming Meets Trading 🎮💹
 
 </div>
